@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataDrivenTest_FaceBook.Base
 {
-    class BaseClass
+   public class BaseClass
     {
         public static IWebDriver driver;
         [SetUp]
