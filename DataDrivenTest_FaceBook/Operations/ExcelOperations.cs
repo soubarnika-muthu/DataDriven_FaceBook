@@ -5,7 +5,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DataDrivenTest_FaceBook
 {
@@ -13,6 +13,7 @@ namespace DataDrivenTest_FaceBook
     {
         public static DataTable ExcelDataTable(string Filename)
         {
+            //Opening the existing file for reading
             FileStream stream = File.Open(Filename, FileMode.Open, FileAccess.Read);
             Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
@@ -28,10 +29,12 @@ namespace DataDrivenTest_FaceBook
             DataTable resultTable = table["Sheet1"];
             return resultTable;
         }
-
+        //creating list
         static List<DataCollection> dataCol = new List<DataCollection>();
+        //Accessing the datas from the file
         public static void PopulateInCollection(string filename)
         {
+            //creating instance of datatable
             DataTable table = ExcelDataTable(filename);
             for (int row = 1; row <= table.Rows.Count; row++)
             {
@@ -43,10 +46,12 @@ namespace DataDrivenTest_FaceBook
                         colName = table.Columns[col].ColumnName,
                         colValue = table.Rows[row - 1][col].ToString()
                     };
+                    //adding the values into the list
                     dataCol.Add(dtTable);
                 }
             }
         }
+        //method to read data from the file
         public static string ReadData(int rowNumber, string columnName)
         {
             try
