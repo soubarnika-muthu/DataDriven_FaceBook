@@ -6,7 +6,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-
+using System;
 
 namespace DataDrivenTest_FaceBook.Base
 {
@@ -22,6 +22,7 @@ namespace DataDrivenTest_FaceBook.Base
             driver.Url = "https://www.facebook.com/";
             // To maximize browser
             driver.Manage().Window.Maximize();
+           
         }
         [TearDown]
         public void TearDown()

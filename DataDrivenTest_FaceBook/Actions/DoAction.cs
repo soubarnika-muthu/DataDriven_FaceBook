@@ -55,6 +55,16 @@ namespace DataDrivenTest_FaceBook.Actions
             driver.FindElement(By.Name("login")).Click();
             System.Threading.Thread.Sleep(10000);
 
+            
+
+        }
+        public static void sendkeys()
+        {
+            IWebElement TextBox = driver.FindElement(By.Name("pass"));
+            TextBox.SendKeys(Keys.Control + "c");
+            System.Threading.Thread.Sleep(2000);
+
+            //Actions action = new Actions(driver);
         }
     }
 }
