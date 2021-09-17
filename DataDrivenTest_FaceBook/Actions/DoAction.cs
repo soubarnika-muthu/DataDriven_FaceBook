@@ -55,16 +55,17 @@ namespace DataDrivenTest_FaceBook.Actions
             driver.FindElement(By.Name("login")).Click();
             System.Threading.Thread.Sleep(10000);
 
+            //calling takescreenshot method
+            Takescreenshot();
+
             
 
         }
-        public static void sendkeys()
+        public static void Takescreenshot()
         {
-            IWebElement TextBox = driver.FindElement(By.Name("pass"));
-            TextBox.SendKeys(Keys.Control + "c");
-            System.Threading.Thread.Sleep(2000);
-
-            //Actions action = new Actions(driver);
+            ITakesScreenshot screenshotDriver = driver as ITakesScreenshot;
+            Screenshot screenshot = screenshotDriver.GetScreenshot();
+            screenshot.SaveAsFile(@"C:\Users\soubarnika.v\source\repos\DataDrivenTest_FaceBook\DataDrivenTest_FaceBook\Screenshot\Login_SC.png");
         }
     }
 }
