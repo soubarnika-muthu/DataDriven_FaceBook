@@ -21,7 +21,7 @@ namespace DataDrivenTest_FaceBook
             Actions.DoAction.Login_into_FaceBook();
         }
         [Test]
-      public void SENDkeys()
+      public void Test_Keyboardactions()
         {
             Actions.KeyboardEvents.PerformKeyboardActions();
         }
