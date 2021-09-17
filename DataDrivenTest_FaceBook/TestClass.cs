@@ -18,7 +18,8 @@ namespace DataDrivenTest_FaceBook
         {
             log.Info("Entering Test1");
             Actions.DoAction.Assert_Titleof_Webpage();
-            Actions.DoAction.Login_into_FaceBook();
+            // Actions.DoAction.Login_into_FaceBook();
+            Actions.DoAction.ReadingDataFromFile(driver);
         }
         [Test]
       public void Test_Keyboardactions()

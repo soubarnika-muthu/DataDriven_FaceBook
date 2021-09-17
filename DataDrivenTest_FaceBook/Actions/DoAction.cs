@@ -21,7 +21,7 @@ namespace DataDrivenTest_FaceBook.Actions
             Assert.AreEqual(title1, title);
         }
        
-        /*   public static void ReadingDataFromFile(IWebDriver driver)
+           public static void ReadingDataFromFile(IWebDriver driver)
            {
                login = new LoginPage(driver);
                ExcelOperations.PopulateInCollection(@"C:\Users\soubarnika.v\source\repos\DataDrivenTest_FaceBook\DataDrivenTest_FaceBook\TestDataFiles\FB_TestData.xlsx");
@@ -33,11 +33,11 @@ namespace DataDrivenTest_FaceBook.Actions
                System.Threading.Thread.Sleep(2000);
 
                login.loginbt.Click();
-               System.Threading.Thread.Sleep(2000);
+               System.Threading.Thread.Sleep(6000);
 
-           }*/
+           }
      
-        //Method to enter login credentials into webpage
+      /*  //Method to enter login credentials into webpage
         public static void Login_into_FaceBook()
         {
             //specifying file path
@@ -60,7 +60,7 @@ namespace DataDrivenTest_FaceBook.Actions
 
             
 
-        }
+        }*/
         public static void Takescreenshot()
         {
             ITakesScreenshot screenshotDriver = driver as ITakesScreenshot;
