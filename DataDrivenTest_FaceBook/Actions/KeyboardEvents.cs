@@ -11,20 +11,13 @@ namespace DataDrivenTest_FaceBook.Actions
     {
         public static void PerformKeyboardActions()
         {
-            //finds the element using id
-            IWebElement myelement = driver.FindElement(By.Name("pass"));
-            //myelement.SendKeys(Keys.Control + "a");
-            
-            myelement.SendKeys(Keys.Home);
-            System.Threading.Thread.Sleep(2000);
-            myelement.SendKeys(Keys.End);
-            System.Threading.Thread.Sleep(2000);
+            //finds the element using path
+            IWebElement myelement = driver.FindElement(By.XPath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/input[1]"));
+            myelement.SendKeys("s");
+           System.Threading.Thread.Sleep(2000);
             myelement.SendKeys(Keys.ArrowDown);
-            // Enter text  and perform keyboard action "Enter"
-            myelement.SendKeys("9629522931");
             System.Threading.Thread.Sleep(2000);
             myelement.SendKeys(Keys.Enter);
-
             System.Threading.Thread.Sleep(2000);
         }
     }

@@ -1,5 +1,5 @@
 ﻿
-/*Project:Testing Facebook loginpage using data driven framework
+/*Project:Automation Testing Facebook using selenium
  *Author: Soubarnika Muthu V
  *Date: 13/09/2021
  */
@@ -14,7 +14,7 @@ using System.IO;
 
 namespace DataDrivenTest_FaceBook.Base
 {
-   public class BaseClass
+    public class BaseClass
     {
         //initialization
         public static IWebDriver driver;
@@ -33,14 +33,24 @@ namespace DataDrivenTest_FaceBook.Base
             // Configure default logging repository with Log4Net configurations
             log4net.Config.XmlConfigurator.Configure(repository, fileInfo);
             log.Info("Entering Setup");
-            //Creating an instance webdriver
-            driver = new ChromeDriver();
-            driver.Url = "https://www.facebook.com/";
-            // To maximize browser
-            driver.Manage().Window.Maximize();
-            log.Debug("navigating to url");
+            try
+            {
+                //Creating an instance of chromeoption class
+                ChromeOptions options = new ChromeOptions();
+                options.AddArgument("--disable-notifications");
+                //Creating an instance webdriver
+                driver = new ChromeDriver(options);
+                driver.Url = "https://www.facebook.com/";
+                // To maximize browser
+                driver.Manage().Window.Maximize();
+                log.Debug("navigating to url");
 
-            log.Info("Exiting setup");
+                log.Info("Exiting setup");
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
 
         }
         [TearDown]

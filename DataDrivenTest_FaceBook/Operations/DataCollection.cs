@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*Project:Automation Testing Facebook using selenium
+ *Author: Soubarnika Muthu V
+ *Date: 13/09/2021
+ */
 
 namespace DataDrivenTest_FaceBook
 {
