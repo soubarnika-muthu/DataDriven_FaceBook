@@ -10,10 +10,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-
-namespace DataDrivenTest_FaceBook
+namespace DataDrivenTest_FaceBook.Email
 {
-    public class ExcelOperations
+    public class ExcelOperationForEmail
     {
         public static DataTable ExcelDataTable(string Filename)
         {
@@ -36,7 +35,7 @@ namespace DataDrivenTest_FaceBook
         //creating list
         static List<DataCollection> dataCol = new List<DataCollection>();
         //Accessing the datas from the file
-        public static void PopulateInCollection(string filename)
+        public  void PopulateInCollection(string filename)
         {
             //creating instance of datatable
             DataTable table = ExcelDataTable(filename);
@@ -56,11 +55,11 @@ namespace DataDrivenTest_FaceBook
             }
         }
         //method to read data from the file
-        public static string ReadData(int rowNumber, string columnName)
+        public  string ReadData(int rowNumber, string columnName)
         {
             try
             {
-                string data = (from colData in dataCol where colData.colName == columnName && colData.rowNumber == rowNumber select colData.colValue).First();
+                string data = (from colData in dataCol where colData.colName == columnName && colData.rowNumber == rowNumber select colData.colValue).SingleOrDefault();
                 return data.ToString();
             }
             catch (Exception e)

@@ -1,5 +1,4 @@
-﻿
-/*Project:Automation Testing Facebook using selenium
+﻿/*Project:Automation Testing Facebook using selenium
  *Author: Soubarnika Muthu V
  *Date: 13/09/2021
  */
@@ -11,6 +10,7 @@ using System;
 using log4net.Repository;
 using System.Reflection;
 using System.IO;
+using OpenQA.Selenium.Firefox;
 
 namespace DataDrivenTest_FaceBook.Base
 {
@@ -24,10 +24,24 @@ namespace DataDrivenTest_FaceBook.Base
         //Get the default ILoggingRepository
         private static readonly ILoggerRepository repository = log4net.LogManager.GetRepository(Assembly.GetCallingAssembly());
 
-        [SetUp]
-        public void SetUp()
+        protected string browser;
+
+        //default constructor
+        public BaseClass()
         {
-            // Valid XML file with Log4Net Configurations
+
+        }
+        //parameterized constructor
+        public BaseClass(string browser)
+        {
+            this.browser = browser;
+        }
+
+
+        [SetUp]
+        public void BrowserTest()
+        {
+
             var fileInfo = new FileInfo(@"Log4net.config");
 
             // Configure default logging repository with Log4Net configurations
@@ -35,15 +49,34 @@ namespace DataDrivenTest_FaceBook.Base
             log.Info("Entering Setup");
             try
             {
-                //Creating an instance of chromeoption class
-                ChromeOptions options = new ChromeOptions();
-                options.AddArgument("--disable-notifications");
-                //Creating an instance webdriver
-                driver = new ChromeDriver(options);
+
+                switch (browser)
+                {
+
+                    case "chrome":
+                        //Creating an instance of chrome webdriver
+                        ChromeOptions options = new ChromeOptions();
+                        options.AddArguments("--disable-notifications");
+                        driver = new ChromeDriver(options);
+                        break;
+                    case "firefox":
+                        //Creating an instance of firefox webdriver
+                        FirefoxOptions options1 = new FirefoxOptions();
+                        options1.AddArguments("--disable-notifications");
+                        driver = new FirefoxDriver();
+                        break;
+                    default:
+                        driver = new ChromeDriver();
+                        break;
+                }
+                //print which browser is started
+                Console.WriteLine(browser + " Started");
+
+                log.Debug("navigating to url");
                 driver.Url = "https://www.facebook.com/";
                 // To maximize browser
                 driver.Manage().Window.Maximize();
-                log.Debug("navigating to url");
+
 
                 log.Info("Exiting setup");
             }
@@ -52,6 +85,13 @@ namespace DataDrivenTest_FaceBook.Base
                 log.Error(ex.Message);
             }
 
+        }
+        //method to take screeshot
+        public static void Takescreenshot()
+        {
+            ITakesScreenshot screenshotDriver = driver as ITakesScreenshot;
+            Screenshot screenshot = screenshotDriver.GetScreenshot();
+            screenshot.SaveAsFile(@"C:\Users\soubarnika.v\source\repos\DataDrivenTest_FaceBook\DataDrivenTest_FaceBook\Screenshot\ " + DateTime.Now.ToString("HHmmss") + ".png");
         }
         [TearDown]
         public void TearDown()

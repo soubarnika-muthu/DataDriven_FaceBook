@@ -1,3 +1,45 @@
-2021-09-20 09:06:07,471 INFO Entering Setup
-2021-09-20 09:06:12,626 DEBUG navigating to url
-2021-09-20 09:06:12,628 INFO Exiting setup
+2021-10-03 16:52:28,405 INFO Entering Setup
+2021-10-03 16:52:33,251 DEBUG navigating to url
+2021-10-03 16:52:35,549 INFO Exiting setup
+2021-10-03 16:53:23,416 INFO Entering Setup
+2021-10-03 16:53:25,486 DEBUG navigating to url
+2021-10-03 16:53:27,568 INFO Exiting setup
+2021-10-03 16:55:23,964 INFO Entering Setup
+2021-10-03 16:55:25,955 DEBUG navigating to url
+2021-10-03 16:55:28,637 INFO Exiting setup
+2021-10-03 16:56:02,840 INFO Entering Setup
+2021-10-03 16:56:04,930 DEBUG navigating to url
+2021-10-03 16:56:07,234 INFO Exiting setup
+2021-10-03 16:58:54,328 INFO Entering Setup
+2021-10-03 16:58:56,439 DEBUG navigating to url
+2021-10-03 16:58:58,783 INFO Exiting setup
+2021-10-03 16:59:48,076 INFO Entering Setup
+2021-10-03 16:59:50,160 DEBUG navigating to url
+2021-10-03 16:59:52,419 INFO Exiting setup
+2021-10-03 17:03:05,436 INFO Entering Setup
+2021-10-03 17:03:07,509 DEBUG navigating to url
+2021-10-03 17:03:09,583 INFO Exiting setup
+2021-10-03 17:05:34,054 INFO Entering Setup
+2021-10-03 17:05:36,187 DEBUG navigating to url
+2021-10-03 17:05:38,421 INFO Exiting setup
+2021-10-03 17:07:36,049 INFO Entering Setup
+2021-10-03 17:07:38,135 DEBUG navigating to url
+2021-10-03 17:07:40,285 INFO Exiting setup
+2021-10-03 17:18:33,206 INFO Entering Setup
+2021-10-03 17:18:35,393 DEBUG navigating to url
+2021-10-03 17:18:37,722 INFO Exiting setup
+2021-10-03 17:18:58,758 INFO Entering Setup
+2021-10-03 17:19:00,986 DEBUG navigating to url
+2021-10-03 17:19:02,735 INFO Exiting setup
+2021-10-03 17:19:27,381 INFO Entering Setup
+2021-10-03 17:19:29,184 DEBUG navigating to url
+2021-10-03 17:19:31,564 INFO Exiting setup
+2021-10-03 17:20:19,481 INFO Entering Setup
+2021-10-03 17:20:21,349 DEBUG navigating to url
+2021-10-03 17:20:23,595 INFO Exiting setup
+2021-10-03 17:20:49,102 INFO Entering Setup
+2021-10-03 17:20:51,003 DEBUG navigating to url
+2021-10-03 17:20:53,064 INFO Exiting setup
+2021-10-03 21:10:07,564 INFO Entering Setup
+2021-10-03 21:10:09,591 DEBUG navigating to url
+2021-10-03 21:10:11,645 INFO Exiting setup
